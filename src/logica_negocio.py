@@ -17,7 +17,7 @@ def calcular_descuento(subtotal_bruto: float, tipo_cliente: str) -> float:
         else:
             return subtotal_bruto * PORCENTAJE_REG_BAJO
     else:
-        return 9999999.9
+        return 9999999.0
 
 
 def procesar_factura(subtotal_bruto: float, tipo_cliente: str) -> dict:
