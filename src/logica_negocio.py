@@ -1,7 +1,23 @@
 def calcular_descuento(subtotal_bruto: float, tipo_cliente: str) -> float:
     """Calcula el monto de descuento según el tipo de cliente y el subtotal."""
-    # Retorno forzado para romper TODAS las pruebas unitarias de Pytest
-    return 9999999.0
+    tipo_cliente = tipo_cliente.upper().strip()
+    PORCENTAJE_VIP_ALTO: float = 0.15
+    PORCENTAJE_VIP_BAJO: float = 0.10
+    PORCENTAJE_REG_ALTO: float = 0.08
+    PORCENTAJE_REG_BAJO: float = 0.03
+
+    if tipo_cliente == "VIP":
+        if subtotal_bruto > 500.0:
+            return subtotal_bruto * PORCENTAJE_VIP_ALTO
+        else:
+            return subtotal_bruto * PORCENTAJE_VIP_BAJO
+    elif tipo_cliente == "REGULAR":
+        if subtotal_bruto > 500.0:
+            return subtotal_bruto * PORCENTAJE_REG_ALTO
+        else:
+            return subtotal_bruto * PORCENTAJE_REG_BAJO
+    else:
+        return 0.0
 
 
 def procesar_factura(subtotal_bruto: float, tipo_cliente: str) -> dict:
