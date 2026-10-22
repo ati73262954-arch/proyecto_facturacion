@@ -57,7 +57,7 @@ jobs:
         env:  
           PYTHONPATH: .
         run: |
-          python scripts/mantenimiento_sistema.py
+          python scripts/mantenimiento_sistema.py > reporte_mantenimiento.txt
 
       - name: 10. Publicar artefacto de mantenimiento
         uses: actions/upload-artifact@v4
